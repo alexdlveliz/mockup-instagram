@@ -16,14 +16,14 @@ function Header() {
 
         <div id="searchbar">
           <div id="searchbar-outline">
-            <i class="fas fa-search"></i>
+            <i className="fas fa-search"></i>
             <input type="text" placeholder="Search" />
           </div>
         </div>
 
         <div id="actions">
           <button id="new-post">
-            <i class="fas fa-plus-circle"></i> Add a new post
+            <i className="fas fa-plus-circle"></i> Add a new post
           </button>
 
           <button id="profile">
@@ -32,11 +32,11 @@ function Header() {
           </button>
 
           <button id="notifications">
-            <i class="far fa-bell"></i>
+            <i className="far fa-bell"></i>
           </button>
 
           <button id="messages">
-            <i class="far fa-envelope"></i>
+            <i className="far fa-envelope"></i>
           </button>
         </div>
       </header>

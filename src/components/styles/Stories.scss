@@ -1,0 +1,75 @@
+#stories-strip {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  margin: 20px 15px 15px;
+
+  button#add-story {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 7%;
+    border-radius: 10px;
+    background: rgb(240, 139, 69);
+    background: linear-gradient(
+      90deg,
+      rgba(240, 139, 69, 1) 0%,
+      rgba(193, 42, 127, 1) 100%
+    );
+    height: 50px;
+    border: none;
+    background-color: inherit;
+    color: white;
+
+    i {
+      color: white;
+    }
+  }
+
+  #stories {
+    width: 93%;
+    height: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+
+    .card {
+      position: relative;
+      margin: auto;
+      width: 70px;
+      height: 70px;
+      border-radius: 60px;
+      background: #ffffff;
+
+      .img-box {
+        width: 100%;
+        height: 100%;
+        padding: 1px;
+        border-radius: 150px;
+        box-sizing: border-box;
+
+        img {
+          border-radius: 150px;
+          width: 100%;
+          height: 100%;
+          opacity: 1;
+        }
+      }
+
+      &:before {
+        content: '';
+        position: absolute;
+        top: -3px;
+        left: -3px;
+        right: -3px;
+        bottom: -3px;
+        background: linear-gradient(235deg, #fbc627, #ff0093);
+        z-index: -1;
+        border-radius: 150px;
+      }
+    }
+  }
+}
