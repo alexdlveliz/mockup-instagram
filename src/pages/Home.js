@@ -1,9 +1,12 @@
 // React
 import React from 'react';
 
+// Compmonents
+import Feed from '../components/Feed';
+
 class Home extends React.Component {
   render() {
-    return 'Home';
+    return <Feed />;
   }
 }
 

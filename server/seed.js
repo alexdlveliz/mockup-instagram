@@ -22,9 +22,33 @@ function createProfiles(limit = 20) {
   return result;
 }
 
+function createPosts(limit = 20) {
+  const result = [];
+
+  for (let i = 0; i < limit; i++) {
+    const userName = faker.internet.userName();
+    const content = faker.lorem.paragraph();
+
+    result.push({
+      id: faker.random.uuid(),
+      userName,
+      content,
+      postImage: `https://picsum.photos/id/${Math.floor(
+        Math.random() * 100
+      )}/200`,
+      profile: `https://picsum.photos/id/${Math.floor(
+        Math.random() * 100
+      )}/200`,
+    });
+  }
+
+  return result;
+}
+
 function main() {
   const data = {
     profiles: createProfiles(),
+    posts: createPosts(),
   };
 
   fs.writeFileSync(

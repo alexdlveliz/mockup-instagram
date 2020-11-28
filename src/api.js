@@ -47,6 +47,31 @@ const api = {
       });
     },
   },
+  posts: {
+    list() {
+      return callApi('/posts');
+    },
+    create(post) {
+      return callApi(`/posts`, {
+        method: 'POST',
+        body: JSON.stringify(post),
+      });
+    },
+    read(postId) {
+      return callApi(`/posts/${postId}`);
+    },
+    update(postId, updates) {
+      return callApi(`/posts/${postId}`, {
+        method: 'PUT',
+        body: JSON.stringify(updates),
+      });
+    },
+    remove(postId) {
+      return callApi(`/posts/${postId}`, {
+        method: 'DELETE',
+      });
+    },
+  },
 };
 
 export default api;

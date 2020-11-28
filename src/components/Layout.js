@@ -5,12 +5,17 @@ import React from 'react';
 import Header from './Header';
 import Stories from './Stories';
 
+// Assets
+import './styles/Layout.scss';
+
 function Layout(props) {
   return (
     <React.Fragment>
-      <Header />
-      <Stories />
-      {props.children}
+      <section className="upper-section">
+        <Header />
+        <Stories />
+      </section>
+      <section className="lower-section">{props.children}</section>
     </React.Fragment>
   );
 }

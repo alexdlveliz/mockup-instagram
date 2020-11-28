@@ -1,11 +1,14 @@
 // React
 import React from 'react';
 
+// Components
+import Post from './Post';
+
 // Assets
-import './styles/Stories.scss';
+import './styles/Feed.scss';
 import api from '../api';
 
-class Stories extends React.Component {
+class Feed extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -22,7 +25,7 @@ class Stories extends React.Component {
   fetchData = async () => {
     this.setState({ loading: true, error: null });
     try {
-      const data = await api.profiles.list();
+      const data = await api.posts.list();
       this.setState({ loading: false, data: data });
     } catch (error) {
       this.setState({ loading: false, error: error });
@@ -35,32 +38,18 @@ class Stories extends React.Component {
     }
 
     if (this.state.error) {
-      return 'error';
+      return 'Error';
     }
-
     return (
       <React.Fragment>
-        <section id="stories-strip">
-          <button id="add-story">
-            <i className="fas fa-plus"></i>
-            Add new Story
-          </button>
-
-          <div id="stories">
-            {this.state.data.map((profile) => {
-              return (
-                <div className="card" key={profile.id}>
-                  <div className="img-box">
-                    <img src={profile.image} alt="profile" />
-                  </div>
-                </div>
-              );
-            })}
-          </div>
+        <section id="feed">
+          {this.state.data.map((post) => {
+            return <Post key={post.id} data={post} className="post" />;
+          })}
         </section>
       </React.Fragment>
     );
   }
 }
 
-export default Stories;
+export default Feed;
